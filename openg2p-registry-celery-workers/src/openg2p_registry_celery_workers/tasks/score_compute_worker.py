@@ -59,7 +59,7 @@ def score_compute_worker(self, score_compute_queue_id: str):
 
             computed_score = _loop.run_until_complete(
                 compute_service.compute_score(
-                    link_internal_record_id=score_compute_queue_item.link_internal_record_id,
+                    internal_record_id=score_compute_queue_item.link_internal_record_id,
                     contributing_attribute_values=score_compute_queue_item.contributing_attribute_values
                     or {},
                     score_config=score_config,
